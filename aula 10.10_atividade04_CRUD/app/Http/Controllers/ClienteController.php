@@ -38,4 +38,10 @@ class ClienteController extends Controller
             return redirect('listarCliente')->with('mensagem', 'Cliente não existe'); 
         }
     }
+
+    public function __construct()
+{
+    $this->middleware('auth');
+}
+
  }    
