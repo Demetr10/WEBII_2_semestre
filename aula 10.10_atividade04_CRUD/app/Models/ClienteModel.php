@@ -36,7 +36,30 @@ class ClienteModel extends Model
         $status = DB::table('clientes')->delete($id);
         return $status;
     }
+
+
+
+    public static function consultar ($id){//consultando peli id, para ver o fomulario os dados do cliente
+        $cliente = DB::table('clientes')->where('id', $id)->first();
+        return $cliente;
+    }
+    public static function atualizar(Request $request, $id){
+        $status = DB::table('clientes')->where('id', $id)->update(([ 
+            'nome'=> $request -> input ('nome'),
+            'cpf'=> $request -> input ('cpf'),
+            'telefone'=> $request -> input ('telefone'),
+            'email'=> $request -> input ('email'),
+            
+            
+            
+
+        ]));
+            return $status;
+    }
+
 }
+
+
 
 //DEFINE A FUNÇÃO SALVAR PARA RECEBER ARGUMENTO REQUEST
 //INSERINDO OS DADOS NO BANCO E COLOQUE A VARIAVEL PARA RETORNA O STATUS DO CONTROLLER

@@ -38,10 +38,23 @@ class ClienteController extends Controller
             return redirect('listarCliente')->with('mensagem', 'Cliente não existe'); 
         }
     }
+    public  function edit ($id){//editar cliente e os dados
+        $cliente = ClienteModel::consultar($id);
+        return view ('Cliente.edit',compact('cliente'));
+    }
+    public  function update (Request $request, $id){//editar cliente e os dados
+        $status = ClienteModel::atualizar($request,$id);
+        if($status){
+            return redirect('/listarCliente')->with('mensagem', 'cliente atualizado mona');
 
-    public function __construct()
+        }else{
+            return redirect('/listarCliente')->with('mensagem', 'cliente não atualizado mona');
+
+        }
+    }
+   /* public function __construct()
 {
     $this->middleware('auth');
 }
-
+*/
  }    
