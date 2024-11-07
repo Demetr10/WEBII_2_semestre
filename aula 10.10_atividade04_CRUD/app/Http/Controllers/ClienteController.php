@@ -52,6 +52,19 @@ class ClienteController extends Controller
 
         }
     }
+
+
+    public function show($id)
+    {
+        $cliente = ClienteModel::consultar($id);
+    
+        if (!$cliente) {
+            return redirect('/listarCliente')->withErrors('Cliente não encontrado.');
+        }
+    
+        return view('cliente.show', compact('cliente'));
+    }
+    
    /* public function __construct()
 {
     $this->middleware('auth');

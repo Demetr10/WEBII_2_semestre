@@ -7,7 +7,7 @@ body {
 }
 
 .container {
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
     background-color: #fff;
     padding: 20px;
@@ -20,43 +20,38 @@ h1 {
     color: #343a40;
 }
 
-.card {
-    border: 1px solid #dee2e6;
-    border-radius: 8px;
-    padding: 20px;
+table {
+    width: 100%;
+    border-collapse: collapse;
     margin-bottom: 20px;
 }
 
-.card-header {
-    background-color: #343a40;
-    color: #fff;
+th, td {
+    border: 1px solid #dee2e6;
     padding: 10px;
-    border-radius: 8px 8px 0 0;
-    font-weight: bold;
+    text-align: left;
 }
 
-.card-body {
-    padding: 20px;
+th {
+    background-color: #f1f1f1;
 }
 
-.card-footer {
-    padding: 10px;
-    text-align: center;
-}
-
-p {
-    font-size: 16px;
-    color: #495057;
+td {
+    vertical-align: middle;
 }
 
 .btn {
     display: inline-block;
-    padding: 10px 15px;
-    margin: 5px;
-    font-size: 16px;
-    color: #fff;
+    padding: 5px 10px;
+    font-size: 14px;
+    border-radius: 4px;
     text-decoration: none;
-    border-radius: 5px;
+    color: #fff;
+}
+
+.btn-info {
+    background-color: #17a2b8;
+    border: none;
 }
 
 .btn-primary {
@@ -69,7 +64,6 @@ p {
     border: none;
 }
 
-.btn-secondary {
-    background-color: #6c757d;
-    border: none;
+.btn:hover {
+    opacity: 0.8;
 }
